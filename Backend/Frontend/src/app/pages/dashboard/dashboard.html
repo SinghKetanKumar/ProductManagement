@@ -1,0 +1,131 @@
+<div class="container-fluid p-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h2>📊 Product Dashboard</h2>
+
+    <button
+      class="btn btn-danger"
+      (click)="logout()">
+
+      <i class="bi bi-box-arrow-right"></i>
+      Logout
+
+    </button>
+
+  </div>
+
+  <!-- Cards -->
+
+  <div class="row g-4">
+
+    <div class="col-lg-4">
+
+      <div class="card shadow border-0 bg-primary text-white">
+
+        <div class="card-body text-center">
+
+          <h5>Total Products</h5>
+
+          <h1>{{dashboard.totalProducts}}</h1>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-lg-4">
+
+      <div class="card shadow border-0 bg-success text-white">
+
+        <div class="card-body text-center">
+
+          <h5>Total Categories</h5>
+
+          <h1>{{dashboard.totalCategories}}</h1>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-lg-4">
+
+      <div class="card shadow border-0 bg-warning text-dark">
+
+        <div class="card-body text-center">
+
+          <h5>Total Inventory Value</h5>
+
+          <h1>₹ {{dashboard.totalValue}}</h1>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Latest Products -->
+
+  <div class="card shadow mt-5">
+
+    <div class="card-header bg-dark text-white">
+
+      <h4>Latest Products</h4>
+
+    </div>
+
+    <div class="card-body">
+
+      <table class="table table-hover align-middle">
+
+        <thead>
+
+          <tr>
+
+            <th>Image</th>
+
+            <th>Name</th>
+
+            <th>Category</th>
+
+            <th>Price</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let p of dashboard.latestProducts">
+
+            <td>
+
+              <img
+                [src]="'http://localhost:3000/uploads/' + p.image"
+                width="70"
+                class="rounded">
+
+            </td>
+
+            <td>{{p.name}}</td>
+
+            <td>{{p.Category.name}}</td>
+
+            <td>₹ {{p.price}}</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

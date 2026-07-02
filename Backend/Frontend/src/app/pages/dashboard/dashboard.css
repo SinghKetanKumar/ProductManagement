@@ -1,0 +1,39 @@
+body{
+
+    background:#f4f6f9;
+
+}
+
+.card{
+
+    border-radius:18px;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+h1{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+table img{
+
+    border-radius:10px;
+
+}
+
+.table{
+
+    margin-bottom:0;
+
+}
